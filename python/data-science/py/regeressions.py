@@ -5,7 +5,6 @@ Created on Mon Feb  8 17:55:55 2021
 @author: MJ
 """
 
-%matplotlib inline
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
@@ -19,7 +18,7 @@ X = np.random.random(size=(20, 1))
 print(X)
 
 y = 3 * X.squeeze() + 2 + np.random.randn(20)
-print(Y)
+print(y)
 
 #plt.scatter(X,Y)
 plt.plot(X,y, 'o')

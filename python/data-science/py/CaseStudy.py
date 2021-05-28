@@ -9,8 +9,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-pwd='C:/Users/MJ/documents/python/aprendiz-data-science-master/notebooks'
-data = pd.read_csv('C:/Users/MJ/documents/python/aprendiz-data-science-master/datasets/world-development-indicators/Indicators.csv')
+pwd='C:/Users/MJ/documents/codi/python/aprendiz-data-science-master/notebooks'
+data = pd.read_csv('C:/Users/MJ/documents/codi/python/data-science/datasets/world-development-indicators/Indicators.csv')
 data.shape
 
 
@@ -37,7 +37,7 @@ indicators = data[mask]
 print(indicators['IndicatorName'].head())
 
 indCO2= data[data['IndicatorName'].str.contains('CO2')]['IndicatorName'].unique()
-len(indCo2)
+len(indCO2)
 
 #Seleccionamos un país y un indicador para explorar:
 hist_indicator = 'CO2 emissions \(metric tons per capita\)'
@@ -98,7 +98,7 @@ plt.show()
 #distribució valors
 stage.boxplot(column='Value')
 
-plt.hist(hist_data, 10, normed=False, facecolor='green')
+plt.hist(co2, 10, normed=False, facecolor='green')
 
 plt.xlabel(stage['IndicatorName'].iloc[0])
 plt.ylabel('# of Years')
@@ -170,7 +170,7 @@ gdp_stage = data[mask1 & mask2]
 plt.plot(gdp_stage['Year'].values, gdp_stage['Value'].values, 'g-')
 
 #para ver mejos los datos comparados hemos multiplicadi por 3000  para cambiar la escala
-plt.plot(stage['Year'].values, stage['Value'].values,'r.')
+plt.plot(stage['Year'].values, stage['Value'].values*3000,'r.')
 
 # Etiquetamos los ejes
 plt.xlabel('Year')
